@@ -9,7 +9,9 @@ Please refer to [Project](https://github.com/Dongxin000/E2SL).
 
 ## Requirements
 - Please install requirements:
-`pip install requirements.txt` 
+```bash
+pip install requirements.txt
+```
 
 - Addtional
 This project additionally relies on [custom CUDA kernels](https://github.com/SimonTheVillain/giga_depth). Therefore, a properly configured NVIDIA GPU environment is required. In particular, our implementation is built and tested with `CUDA 11`, together with a compatible PyTorch version and the necessary build tools for compiling custom CUDA/C++ extensions, e.g., `ninja`.
