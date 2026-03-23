@@ -1,0 +1,45 @@
+training:
+  name: slice
+  batch_size: 1
+  learning_rate: 0.01
+  momentum: 0.9
+  alpha_reg: 10
+  alpha_sigma: 0
+  gpu_list: [0]
+  epochs: 5000
+
+dataset:
+  path: ~/datasets/
+  is_npy: False
+  workers: 8
+  tgt_res: [ 1216, 896 ]
+  pad_proj: 0.1
+  slice_in:
+    start: 0
+    height: 896
+  slice_out:
+    start: 0
+    height: 448
+
+backbone:
+  load_file: ""
+  name: SCE
+  lines: 896
+  slices: 1
+  channels: [16, 32, 64]
+  channels2: [64, 64, 64, 64]
+
+regressor:
+  load_file: ""
+  name: REG
+  ch_in: 64
+  lines: 448
+  bb: []
+  classes: [16, 14, 12]
+  padding: [0, 1, 2]
+  class_bb: [[16], [16], [16]]
+  superclasses: 168
+  ch_reg: [64]
+  msk: [16, 8]
+  regress_neighbours: 1
+

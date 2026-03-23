@@ -1,0 +1,60 @@
+training:
+  name: E2SL
+  load_model: ""
+  batch_size: 4
+  learning_rate: 4.0
+  lr_scales: [1.0, 0.5, 0.25, 0.12, 0.01]
+  momentum: 0.9
+  weight_decay: 1e-5 # 1e-6
+  alpha_reg: [500, 1000, 2000, 2000, 2000]
+  edge_weight: [0, 1, 2, 4, 20]
+  gpu_list: [0, 1]
+  epochs: 30
+  key_epochs: [ 6, 12, 18, 24 ]
+  half_precision: False
+  store_every_epoch: True
+
+dataset:
+  path: ""
+  is_npy: False
+  workers: 12
+  tgt_res: [ 1280, 704 ]
+  vertical_jitter: 4
+  downsample_output: True
+  dataset_type: 'event_based_SL'
+  slice_in:
+    start: 0
+    height: 704
+  slice_out:
+    start: 0
+    height: 352
+
+
+backbone:
+  name: Backbone
+  input_channels: 1
+  lines: 704
+  slices: 1
+  channels: []
+  kernel_sizes: []
+  channels_sub: [16, 24, 32, 40, 64, 64, 96, 160] # [16, 32, 32, 64, 64]
+  kernel_sizes_sub: [5, 3, 3, 3, 3, 5, 3, 3] # 21 pixel radius?
+  norm: batch
+  local_contrast_norm: False
+
+
+regressor:
+  name: Regressor
+  lines: 356
+  classes: [16, 12, 10]
+  class_padding: [0, 2, 3]
+  class_ch_in_offset: [0, 0, 0]
+  class_ch_in: [64, 64, 64]
+  class_ch: [[64, 32], [32], [32]]
+  reg_data_start: 32
+  reg_superclasses: 480
+  reg_ch_in: 32
+  reg_ch: [32] # 32
+  reg_overlap_neighbours: 1
+  reg_shared_over_lines: 2 # two lines share the same weight for the regressor (maybe make this 4?)
+  reg_pad: 0 # padding that is applied to the regression result/regression target
