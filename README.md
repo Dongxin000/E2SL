@@ -42,7 +42,7 @@ Please cite the paper in your publications if it helps your research:
     }
 
 ## Acknowledgments 
-- This software and code borrows heavily from [GigaDepth](https://github.com/SimonTheVillain/giga_depth).
+- This code borrows heavily from [GigaDepth](https://github.com/SimonTheVillain/giga_depth).
 - We express our gratitude to the anonymous reviewers for their valuable and insightful comments and suggestions, which have been truly inspiring.
 - Please don't hesitate to create an issue if you have any questions, suggestions, or concerns.
 
