@@ -25,9 +25,9 @@ This project additionally relies on [custom CUDA kernels](https://github.com/Sim
 python3 train.py --config_file=configs/E2SL.yaml --dataset_path=/path/to/dataset --model_path=/path/to/save/checkpoints
 ```
 
-- For evaluation, you can run:
+- For inference, you can change input data path of `demo.py`, and run:
 ```bash
-python3 eval.py
+python3 demo.py
 ```
 
 
