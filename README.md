@@ -5,7 +5,7 @@
 ![teaser](doc/teaser.png)
 Structured light (SL) enables 3D reconstruction but struggles in high-speed dynamic scenes when using frame-based cameras. We propose E<sup>2</sup>SL, an efficient deep network for monocular event-based SL, combining BE-LUT for fast feature retrieval, SCE for spatial context enhancement, and GPR for robust depth estimation. Experiments on synthetic and real-world datasets show state-of-the-art accuracy with only 7.7 ms per frame, demonstrating suitability for high-speed depth sensing.
 
-Please refer to [Project](https://github.com/Dongxin000/E2SL).
+Please refer to [Project](https://dongxin000.github.io/E2SL/).
 
 ## Requirements
 - Please install requirements:
